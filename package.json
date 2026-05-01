@@ -1,13 +1,14 @@
 {
   "name": "projectportfolio",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A visual platform for showcasing projects in a structured PSAT (Problem–Solution–Approach–Tech Stack) format, enabling developers and designers to present, explore, and understand work more efficiently.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords":["mern", "portfolio", "nodejs", "express", "mongodb", "api","backend","projects"],
+  "author": "Vaibhav Soni",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -17,6 +18,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.6.1"
+    "mongoose": "^9.6.1",
+    "nodemon": "^3.1.14"
   }
 }
