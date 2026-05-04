@@ -1,14 +1,15 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { generateAccessToken, generateRefreshToken } = require("../utils/token.js");
+const {generateUsername} = require("../utils/usernameGenerator")
 const UserRepo = require("../repositories/user.repo");
 
-const register = async ({ email, password, username, name }) => {
+const register = async ({ email, password, name }) => {
     const existingUser = await UserRepo.findByEmail(email);
     if (existingUser) {
         throw new Error("User already exists");
     }
-
+    const username = generateUsername(name);
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await UserRepo.createUser({
         email,

@@ -12,6 +12,10 @@ const findByEmail = (email) => {
     return User.findOne({ email }).select("+password");
 };
 
+const findByUsername = (username) => {
+    return User.findOne({ username }).select("-password");
+};
+
 const updateById = (id, updates) =>
   User.findByIdAndUpdate(id, updates, {    returnDocument: "after", runValidators: true});
 
@@ -24,5 +28,6 @@ module.exports = {
     findByEmail,
     findById,
     updateById,
-    deleteMyId
+    deleteMyId,
+    findByUsername
 };
